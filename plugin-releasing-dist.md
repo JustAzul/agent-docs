@@ -47,8 +47,10 @@ output shapes, persisted formats, hooks, tools and interfaces.
    This push publishes the release: make it only after the owner approves it.
 4. CI publishes. Its gate accepts a commit only when the subject is exactly
    that, the diff against its first parent touches only `VERSION`, and
-   `VERSION` equals the version in the subject. A separate publish job then, in
-   this order: builds the plugin tree, tags the build commit `v<version>`,
+   `VERSION` equals the version in the subject. A separate publish job starts
+   only after the repository's whole CI workflow has passed on that commit, so
+   a release whose CI is red publishes nothing. It then, in this order: builds
+   the plugin tree, tags the build commit `v<version>`,
    creates the GitHub release with notes from the commits since the previous
    release, and moves `dist` to the tagged commit last. Installs follow the
    `dist` branch; the GitHub release tags stay `v<version>`.
