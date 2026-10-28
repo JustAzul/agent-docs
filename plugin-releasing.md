@@ -47,6 +47,7 @@ Between releases the entry keeps naming the last tag, so every install, fresh on
 
 Run them from the repository root, on a clean checkout of `main` that is up to date with origin.
 
+0. Release only code that is already on origin's `main` with green CI. `git rev-parse HEAD` equals `git rev-parse origin/main`, and every run listed by `gh run list --commit "$(git rev-parse HEAD)" --json workflowName,conclusion` concluded `success`. In a repository without CI, its local test suite passes on that commit. Push unreleased code first and wait for green; never send it in the same push as the release.
 1. Name the plugin and the new version, and read where the plugin lives:
 
    ```sh
