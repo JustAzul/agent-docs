@@ -5,6 +5,7 @@ Shared docs that coding agents fetch on demand. A repository links the raw URL o
 | Doc | For |
 |---|---|
 | [plugin-releasing.md](plugin-releasing.md) | Claude Code plugin repositories whose marketplace entry pins each plugin to a release tag |
+| [plugin-releasing-dist.md](plugin-releasing-dist.md) | Claude Code plugin repositories whose plugin installs from a `dist` branch that CI builds |
 
 Each doc holds no repository-specific values: it reads what it needs from the repository it runs in.
 
